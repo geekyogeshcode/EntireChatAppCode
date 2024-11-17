@@ -30,7 +30,7 @@ const RegisterPage = () => {
         if(error.response && error.response.data.message){
           alert(error.response.data.message)
         }else{
-          alert("Server error please try agian") 
+          alert("Server error please try agian.") 
         }
 
         if(fileInputRef.current){

@@ -21,7 +21,7 @@ router.post("/register",upload.single('image'),async(req,res) =>{
             }
 
             if(!req.file){
-                return res.status(400).json({message:"Invalid file type. Only JPEG and PNG are allowed"})
+                return res.status(400).json({message:"Invalid file type. Only JPEG and PNG are allowed."})
             }
 
             const user=new userData({username,email,password,image})
