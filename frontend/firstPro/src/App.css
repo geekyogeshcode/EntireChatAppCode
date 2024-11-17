@@ -1,53 +1,80 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100%;
+}
+
+.Register,.LoginPage{
+  background-color: #7AC560;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registerContainer,.LoginContainer{
+  background-color:#FFFFFF;
+  width: 30vw;
+  padding: 2vw 1vw;
+}
+
+.registerContainer h3,.LoginContainer>h3{
   text-align: center;
+  font-size: 2vw;
+  font-weight: 900;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.Register form{
+.Register form,.LoginPage form{
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 1vw;
 }
 
-.Register form input{
+.Register form input,.LoginPage form input{
+  padding: 1vw 2vw;
+  border: none;
+  outline: none;
+  background-color: #F2F2F2;
+}
+
+.ReButton{
+  display: flex;
+  justify-content: space-between;
+}
+.LoginPage form button, .Register form button{
+  color: white;
+  padding: 1vw 2vw;
+  border: none;
+  outline: none;
+  background-color: #00B141;
+}
+.HomePage{
+  width: 100%;
+  min-height: 100vh;
+  background-color:#F2F2F2;
+}
+.HomePage nav{
+  user-select: none;
+  background-color: #dddddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding: 1vw 2vw;
 }
+.HomePage nav > *{
+  cursor: pointer;
+}
+.HomePage nav img{
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+
