@@ -56,12 +56,17 @@ router.post('/login',async(req,res) =>{
 
         return res.json({success:true,authToken,userData:{
             username:findUser.username,
-            image:findUser.image
+            image:findUser.image,
+            id:findUser._id 
         }})
     }
 
 })
 
+router.get('/displaydata',async(req,res) =>{
+    let allUsers=await userData.find({})
+    res.status(200).json({allUsers})
+})
 
 module.exports=router
 
