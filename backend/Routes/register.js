@@ -3,7 +3,7 @@ const router=express.Router()
 const upload=require('../middleware/upload')  
 const jwt=require('jsonwebtoken')
 const userData = require('../Models/userData')
-const JWTSecretKey="THISIsmeCoolDUDEYogeshAWebDEvelopER"
+const JWTSecretKey="THISIsmeCoolDUDEYogeshAWebDEvelopER" 
 
 
 router.post("/register",upload.single('image'),async(req,res) =>{
@@ -60,9 +60,8 @@ router.post('/login',async(req,res) =>{
             id:findUser._id 
         }})
     }
-
 })
-
+ 
 router.get('/displaydata',async(req,res) =>{
     let allUsers=await userData.find({})
     res.status(200).json({allUsers})

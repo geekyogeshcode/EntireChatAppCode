@@ -11,7 +11,6 @@ const LoginPage = () => {
   let handleForm=async(data) =>{
 
     try {
-      
         const response=await axios.post("http://localhost:3000/api/login",data)
 
         if(response.data.success){

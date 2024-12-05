@@ -88,6 +88,7 @@ body{
   width: 30%;
   height: calc(100vh - 10vh);
   overflow-y: scroll;
+  user-select: none;
 }
 
 .main-box .left::-webkit-scrollbar{
@@ -121,5 +122,22 @@ body{
   overflow-y: auto;
   width: 70%;
  
+}
+
+.HomePage .main-box .right .messages{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0.5vw 1vw;
+}
+.HomePage .main-box .right .messages>*{
+  cursor: pointer;
+  user-select: none;
+}
+.HomePage .main-box .right .messages > img{
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 50%;
+  object-fit: cover;
 }
 

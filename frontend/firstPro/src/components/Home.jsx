@@ -7,6 +7,8 @@ const Home = () => {
     const {username,image,id}=location.state || {}
 
     const [allUsers,setAllUsers]=useState([])
+    const [chatUser,setChatUser]=useState("Messages")
+    const [imageChatUser,setImageChatUser]=useState(null)
 
     const getData= async() =>{
         let response=await axios.get('http://localhost:3000/api/displaydata')
@@ -21,6 +23,15 @@ const Home = () => {
     useEffect(() =>{
         getData()
     },[])
+
+    let currentUser=(e) =>{
+        let user=e.currentTarget.getAttribute('data-username').split(',')[0]
+        let userImage=e.currentTarget.getAttribute('data-username').split(',')[1]
+        
+        setChatUser(user)
+        setImageChatUser(userImage)
+        
+    }
     
     
   return (
@@ -37,19 +48,18 @@ const Home = () => {
                         allUsers.length>0 && allUsers.filter((user) =>(user._id !== id))
                         .map((user,index) =>(
                           
-                                <div className="user" key={user.email}>
+                                <div className="user"  onClick={currentUser} data-username={[user.username,user.image]}  key={user.email}>
                                      <img src={`http://localhost:3000/${user.image}`} alt="" />
-                                     <h3>{user.username}</h3>
+                                     <h3 >{user.username}</h3>
                                  </div>
-                                
-                           
                         ))
                     }
                 
             </div>
             <div className="right">
                 <div className="messages">
-                    
+                    <h2>{chatUser}</h2> 
+                    <img src={`http://localhost:3000/${imageChatUser}`} alt="" />
                 </div>
             </div>
         </div>
