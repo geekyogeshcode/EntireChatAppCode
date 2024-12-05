@@ -128,7 +128,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:0.5vw 1vw;
+  /* padding:0.5vw 1vw; */
 }
 .HomePage .main-box .right .messages>*{
   cursor: pointer;
@@ -141,3 +141,38 @@ body{
   object-fit: cover;
 }
 
+.main-box .right{
+  padding: 1vw 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-box .right .sendMessage input{
+  width: 85%;
+  height: 7vh;
+  border-radius: 2vw;
+  padding: 1vw;
+  font-size: 1.2vw;
+  border: none;
+  outline: none;
+  background-color: #dddddd;
+}
+
+.main-box .right .sendMessage{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-box .right .sendMessage button{
+  width: 12%;
+  color: white;
+  background-color: #dddddd;
+  height: 100%;
+  border-radius:3vw;
+  border: none;
+  cursor: pointer;
+  background-color: #ff5933ea;
+  font-size: 1.2vw;
+}

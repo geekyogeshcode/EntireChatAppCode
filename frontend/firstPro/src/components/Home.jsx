@@ -7,8 +7,8 @@ const Home = () => {
     const {username,image,id}=location.state || {}
 
     const [allUsers,setAllUsers]=useState([])
-    const [chatUser,setChatUser]=useState("Messages")
-    const [imageChatUser,setImageChatUser]=useState(null)
+    const [chatUser,setChatUser]=useState("")
+    const [imageChatUser,setImageChatUser]=useState('')
 
     const getData= async() =>{
         let response=await axios.get('http://localhost:3000/api/displaydata')
@@ -58,9 +58,17 @@ const Home = () => {
             </div>
             <div className="right">
                 <div className="messages">
-                    <h2>{chatUser}</h2> 
-                    <img src={`http://localhost:3000/${imageChatUser}`} alt="" />
+                        <h2>{chatUser}</h2> 
+                     {imageChatUser?<img src={`http://localhost:3000/${imageChatUser}`} alt="" />:null}   
                 </div>
+
+                {
+                    chatUser?<div className="sendMessage">
+                    <input type="text" placeholder="Type a message..." />
+                    <button>Send</button>
+                </div>:null
+                }
+                
             </div>
         </div>
     </div>
